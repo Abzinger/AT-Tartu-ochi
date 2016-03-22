@@ -15,7 +15,10 @@ def merge_side_grids(o, l):
     v = d.split()
     n = int(w[0]) + int(v[0])
     m = max(int(w[1]), int(v[1]))
+    lam1 = int(w[0]) -1
+    lam2 = int(v[0]) -1
     r = 2*m - 1
+    dd = n +1
     f = open(o+"_"+l+".txt", 'a')
     f.write(str(n)+' '+str(m))
     f.write('\n')
@@ -32,7 +35,8 @@ def merge_side_grids(o, l):
                     x = []
                     y = []
                     x = lines1[i]
-                    f.write(x[0]+x[1]+x[2]+x[3])
+                    for j in range(lam1):
+                        f.write(x[j])
                     f.close()
                     y = lines2[i]
                     s = rn.randint(0,1)
@@ -44,7 +48,8 @@ def merge_side_grids(o, l):
                     f.write(str(z))
                     f.close()
                     f = open(o+"_"+l+".txt", 'a')
-                    f.write(y[0]+y[1]+y[2]+y[3])
+                    for j in range(lam2):
+                        f.write(y[j])
                    # f.write(str(z[0])+str(z[1])+str(z[2]))
                     f.write('\n')
                     f.close()
@@ -58,10 +63,12 @@ def merge_side_grids(o, l):
                     x1 = lines1[i]
                     y1 = lines2[i]
                     f = open(o+"_"+l+".txt", 'a')
-                    f.write(x1[0]+x1[1]+x1[2]+x1[3]+x1[4])
+                    for j in range(int(w[0])):
+                        f.write(x1[j])
                     f.close()
                     f = open(o+"_"+l+".txt", 'a')
-                    f.write(y1[0]+y1[1]+y1[2]+y1[3]+y1[4])
+                    for j in range(int(v[0])):
+                        f.write(y1[j])
                     f.write('\n')
                     f.close()
                 else:
@@ -73,7 +80,8 @@ def merge_side_grids(o, l):
                     if lines2[i][0] == 'l' or lines2[i][0] == 'r':
                         x2 = []
                         x2 = lines2[i]
-                        f.write(x2[0]+x2[1]+x2[2]+x2[3])
+                        for j in range(lam2):
+                            f.write(x2[j])
                         f.close()
                         s = rn.randint(0,1)
                         if s == 0:
@@ -84,7 +92,8 @@ def merge_side_grids(o, l):
                         f.write(str(z))
                         f.close()
                         f = open(o+"_"+l+".txt", 'a')
-                        f.write(x2[0]+x2[1]+x2[2]+x2[3])
+                        for j in range(lam2):
+                            f.write(x2[j])
                         # f.write(str(z[0])+str(z[1])+str(z[2]))
                         f.write('\n')
                         f.close()
@@ -95,10 +104,12 @@ def merge_side_grids(o, l):
                     if lines2[i][0] == 'u' or lines2[i][0] == 'd':
                         x3 = []
                         x3 = lines2[i]
-                        f.write(x3[0]+x3[1]+x3[2]+x3[3]+x3[4])
+                        for j in range(int(v[0])):
+                            f.write(x3[j])
                         f.close()
                         f = open(o+"_"+l+".txt", 'a')
-                        f.write(x3[0]+x3[1]+x3[2]+x3[3]+x3[4])
+                        for j in range(int(v[0])):
+                            f.write(x3[j])
                             # f.write(str(z[0])+str(z[1])+str(z[2]))
                         f.write('\n')
                         f.close()
@@ -110,7 +121,8 @@ def merge_side_grids(o, l):
                     if lines1[i][0] == 'l' or lines1[i][0] == 'r':
                         x4 = []
                         x4 = lines1[i]
-                        f.write(x4[0]+x4[1]+x4[2]+x4[3])
+                        for j in range(lam1):
+                            f.write(x4[j])
                         f.close()
                         s = rn.randint(0,1)
                         if s == 0:
@@ -121,7 +133,8 @@ def merge_side_grids(o, l):
                         f.write(str(z))
                         f.close()
                         f = open(o+"_"+l+".txt", 'a')
-                        f.write(x4[0]+x4[1]+x4[2]+x4[3])
+                        for j in range(lam1):
+                            f.write(x4[j])
                         # f.write(str(z[0])+str(z[1])+str(z[2]))
                         f.write('\n')
                         f.close()
@@ -132,10 +145,12 @@ def merge_side_grids(o, l):
                     if lines1[i][0] == 'u' or lines1[i][0] == 'd':
                         x5 = []
                         x5 = lines1[i]
-                        f.write(x5[0]+x5[1]+x5[2]+x5[3]+x5[4])
+                        for j in range(int(w[0])):
+                            f.write(x5[j])
                         f.close()
                         f = open(o+"_"+l+".txt", 'a')
-                        f.write(x5[0]+x5[1]+x5[2]+x5[3]+x5[4])
+                        for j in range(int(w[0])):
+                            f.write(x5[j])
                         # f.write(str(z[0])+str(z[1])+str(z[2]))
                         f.write('\n')
                         f.close()
@@ -144,4 +159,4 @@ def merge_side_grids(o, l):
                         exit(1)
 
 
-merge_side_grids('C', 'J')
+merge_side_grids('grid6a', 'grid6b')

@@ -196,7 +196,6 @@ def solve_color_IP(n, m, nodes, arcs, a):
             for i in range(8):
                 for j in range(8):
                     model.addConstr(gb.quicksum([y_vars[(i, j)] + 1]), gb.GRB.GREATER_EQUAL, gb.quicksum([x_vars[(l[1], i)] + x_vars[(l[0], j)]]))
-
     # fix y-variables to tournament
     for i in range(8):
         for j in range(8):
